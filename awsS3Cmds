@@ -1,0 +1,16 @@
+ curl https://s3.amazonaws.com/aws-cli/awscli-bundle.zip -o awscli-bundle.zip
+ apt install unzip python
+ unzip awscli-bundle.zip
+ #sudo apt-get install unzip - if you dont have unzip in your system
+ ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
+ 
+
+################################################################
+Upload and List files in s3 bucket 
+################################################################
+ubuntu@ip-172-31-3-177:~$ aws s3 cp file.txt s3://dev.k8s.witty.in --storage-class REDUCED_REDUNDANCY
+upload: ./file.txt to s3://dev.k8s.witty.in/file.txt
+ubuntu@ip-172-31-3-177:~$ 
+ubuntu@ip-172-31-3-177:~$ aws s3 ls  s3://dev.k8s.witty.in/
+                           PRE dev.k8s.witty.in/
+2019-10-12 17:41:14          0 file.txt
